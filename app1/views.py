@@ -4,7 +4,6 @@ from django.shortcuts import redirect
 
 def redirect_to_main(request):
     return show_1st(request)
-dfsd
 
 
 def show_1st(request):
