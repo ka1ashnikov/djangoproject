@@ -30,7 +30,6 @@ def show_2nd(request):
 
 
 def redirect_link(request):
-
     if request.method == 'POST':
         user_link = request.POST.get('link')
         user_information = f'{request.user_agent.os.family} {request.user_agent.os.version_string}, {request.user_agent.browser.family} Ver. {request.user_agent.browser.version_string}'
@@ -39,7 +38,7 @@ def redirect_link(request):
                 'link': user_link,
             }
             try:
-                print(datetime.now(),)
+                print(datetime.now())
                 links_db(link=user_link, date=datetime.now(), information=user_information).save()
                 print('Данные занесены в БД.')
             except:
@@ -51,5 +50,10 @@ def redirect_link(request):
     }
     return render(request, 'redirect_page.html', context=data)
 
-# TODO: Сделать систему вывода всех строк из бд
-# def console(request):
+
+def console(request):
+    all_rows = links_db.objects.all()
+    data = {
+        'all_rows': all_rows,
+    }
+    return render(request, 'console.html', context=data)

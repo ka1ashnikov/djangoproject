@@ -1,0 +1,12 @@
+{% extends 'index.html' %}
+{% block title %}Database Console{% endblock %}
+
+{% block content%}
+<body class="console-body">
+<div class="console">
+    {% for row in all_rows %}
+    <h2 class="console-text">Девайс: «{{row.information}}» Ссылка: «{{row.link}}» Дата: «{{row.date}}»</h2>
+    {% endfor %}
+</div>
+</body>
+{% endblock %}
