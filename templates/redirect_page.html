@@ -3,4 +3,11 @@
 
 
 {% block content %}
+        <form method="POST">
+                {% csrf_token %}
+              <input name="link" rows="2" class="question" id="msg" required autocomplete="off"></input>
+              <label for="msg"><span>Введите ссылку, на которую вы хотите зайти.</span></label>
+              <input type="submit"   value="Подтвердить" />
+        </form>
+
 {% endblock %}
