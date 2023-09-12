@@ -1,0 +1,11 @@
+{% extends 'index.html' %}
+
+{% block title %}{{pg}} page{% endblock %}
+
+{% block content %}
+    <span class="header">This is {{pg}} page!</span>
+    <a href='/{{switch_pg}}'><h1 class="next-page border">{{change_pg}}</h1></a>
+    {% if pg == 1 %}
+        <a href="{% url 'redirect' %}"><h1 class="redirect-page border">REDIRECT PAGE</h1></a>
+    {% endif %}
+{% endblock%}
