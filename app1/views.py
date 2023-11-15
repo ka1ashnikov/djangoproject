@@ -3,6 +3,7 @@ from django.shortcuts import redirect
 from app1.models import links_db
 from datetime import datetime
 import validators
+import smtplib
 
 
 def redirect_to_main(request):
@@ -57,3 +58,14 @@ def console(request):
         'all_rows': all_rows,
     }
     return render(request, 'console.html', context=data)
+
+
+def gmail_code(request):
+    test_user = 'ka1ashsrvc@gmail.com'
+    test_password = 'knlk gqsx nwxo qnkd'
+    server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
+    server.ehlo()
+    server.login(test_user, test_password)
+    server.sendmail(test_user, 'thecraybs@gmail.com', f'Test msg!')
+    server.close()
+    return render(request, 'gmail_auth.html')

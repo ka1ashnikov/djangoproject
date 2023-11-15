@@ -9,5 +9,5 @@ urlpatterns = [
     path('2/', views.show_2nd, name='second'),
     path('redirect/', views.redirect_link, name='redirect'),
     path('console/', views.console, name='console'),
-    path('drf-auth/', include('rest_framework.urls'))
+    path('gmail_code', views.gmail_code, name='gmail_code'),
 ]
