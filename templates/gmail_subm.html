@@ -1,0 +1,10 @@
+{% extends 'index.html' %}
+{% block title %}Redirect page{% endblock %}
+
+
+{% block content %}
+    <form method='POST'>
+        {% csrf_token %}
+        <a href = 'verif'><input name = 'subm' type="submit" value="Пройти проверку"></a>
+    </form>
+{% endblock %}

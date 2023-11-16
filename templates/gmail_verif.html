@@ -1,0 +1,12 @@
+{% extends 'index.html' %}
+{% block title %}Redirect page{% endblock %}
+
+
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+    <input name="code" rows="2" class="question" id="msg" required autocomplete="off"></input>
+    <label for="msg"><span>Введите код, который пришел вам на почту</span></label>
+    <input type="submit" name = "subm_code" value="Подтвердить"/>
+</form>
+{% endblock %}
