@@ -3,8 +3,11 @@
 
 
 {% block content %}
-    <form method='POST'>
+<form method="POST">
         {% csrf_token %}
-        <a href = 'verif'><input name = 'subm' type="submit" value="Пройти проверку"></a>
-    </form>
+        <input name='user_mail'></input>
+        <button name = 'clicked' value="val">Верифицировать почту.</button>
+</form>
+
+
 {% endblock %}
