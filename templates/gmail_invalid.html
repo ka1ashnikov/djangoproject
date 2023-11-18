@@ -1,0 +1,10 @@
+{% extends 'index.html' %}
+
+{% block title %}Success verif page{% endblock %}
+
+{% block content %}
+<form method="POST">
+        {% csrf_token %}
+        <button name = 'invalid_clicked' value="clicked"> вернуться</button>
+</form>
+{% endblock %}

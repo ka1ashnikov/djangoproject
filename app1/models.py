@@ -29,6 +29,7 @@ class codes(models.Model):
     code = models.CharField(max_length=6, blank=False)
     gmail = models.CharField(max_length=15,blank=False, null=False)
     code_sended = models.BooleanField(blank=False, null=True)
+    gmail_verified = models.BooleanField(blank=False, null=True)
 
     def __str__(self):
         return f'Девайс: "{self.user_agent}" IP: "{self.ip}" Код: "{self.code}" "{self.gmail}"'

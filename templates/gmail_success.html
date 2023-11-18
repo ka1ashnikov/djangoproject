@@ -1,0 +1,11 @@
+{% extends 'index.html' %}
+
+{% block title %}Success verif page{% endblock %}
+
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+    <p>Succes verif!</p>
+    <button name = 're-verify' value="clicked"> вернуться</button>
+</form>
+{% endblock %}
