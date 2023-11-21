@@ -10,4 +10,6 @@ urlpatterns = [
     path('redirect/', views.redirect_link, name='redirect'),
     path('console/', views.console, name='console'),
     path('gmail_code/', views.gmail_subm, name='gmail_submit'),
+    path('link_gmail_auth/', views.link_gmail_auth, name='is_gmail_auth'),
+    path('link_gmail/<token>/', views.gmail_activate, name='is_gmail_auth'),
 ]

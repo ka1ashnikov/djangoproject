@@ -1,0 +1,11 @@
+{% extends 'index.html' %}
+
+{% block title %}Email used{% endblock %}
+
+{% block content %}
+        <form method="POST">
+                {% csrf_token %}
+                <p>Email is used</p>
+                <button name = 'gmail_used' value="clicked"> вернуться</button>
+        </form>
+{% endblock %}
